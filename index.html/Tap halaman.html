@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata Populer di Sumatra Utara</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .tab {
+            overflow: hidden;
+            border-bottom: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        .tab button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .tab button.active {
+            background-color: #ccc;
+        }
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Wisata Populer di Sumatra Utara</h1>
+
+<div class="tab">
+  <button class="tablinks" onclick="openPage(event, 'Halaman1')" id="defaultOpen">Halaman 1</button>
+  <button class="tablinks" onclick="openPage(event, 'Halaman2')">Halaman 2</button>
+</div>
+
+<div id="Halaman1" class="tabcontent">
+  <h2>Wisata Populer - Halaman 1</h2>
+  <p>Bukit Lawang terkenal dengan pusat rehabilitasi orangutan dan trekking.</p>
+  <p>Bukit Sibea-bea dengan pemandangan patung Yesus yang besar.</p>
+  <p>Air Terjun Sipiso-piso</p>
+  <p>Patung SiGale-Gale</p>
+  <p>Danau Lauk Kawar</p>
+  <p>Pemandian Air Panas Pariban</p>
+</div>
+
+<div id="Halaman2" class="tabcontent">
+  <h2>Wisata Populer - Halaman 2</h2>
+  <p>Bukit Indah Simarjarunjun</p>
+  <p>Bukit Sidihoni</p>
+  <p>Desa Paipera</p>
+  <p>Pulau Kalimantung</p>
+  <p>Kebun Teh Sidamanik</p>
+  <p>Bukit Holbung</p>
+</div>
+
+<script>
+function openPage(evt, pageName) {
+  var i, tabcontent, tablinks;
+  // Menyembunyikan semua konten tab
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  // Menghapus kelas 'active' dari semua tab
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  // Menampilkan konten halaman yang dipilih dan menambahkan kelas 'active'
+  document.getElementById(pageName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+// Menampilkan halaman pertama secara default
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>
